@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { addBasket } from "@/redux/slice";
-import { removeFromBasket } from "@/redux/slice";
 import { useDispatch } from "react-redux";
 
 const MAX_RATING = 5;
@@ -30,17 +29,17 @@ export const Product = ({ id, title, price, category, description, image }) => {
       <div>
         <div className="pb-3">
           <p className="absolute top-2 right-2 text-xs italic text-gray-400">{category}</p>
-          <Image width={200} height={200} src={image} alt="productImage" className="mx-auto" />
+          <Image width={200} height={200} src={image} alt="productImage" className="mx-auto aspect-auto" />
         </div>
         <h4>{title}</h4>
         <div className="flex">
-          {Array(rating)
+          {/* {Array(rating)
             .fill()
             .map((_, i) => (
               <div key={i}>
                 <StarIcon className="h-5 text-yellow-400 " />
               </div>
-            ))}
+            ))} */}
         </div>
         <p>{`${price}$`}</p>
         <div className="p-2 pt-6  h-50 ">
